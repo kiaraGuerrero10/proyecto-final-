@@ -15,4 +15,7 @@ git push --> Autentificar
 
 git pull --> Para subir los cambios al Git Hub
 
+Mi repositorio es como una cajita, Una linea de tiempo 
+
+main --> rama principal, todo lo que se escribe genera vigencia --> Los 2 comentarios que hice xd
 
