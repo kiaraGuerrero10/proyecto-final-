@@ -1,0 +1,15 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Arimo';
+    src: url(Tipografías/static/Arimo-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url(Tipografías/static/Inter_18pt-Light.ttf);
+}
