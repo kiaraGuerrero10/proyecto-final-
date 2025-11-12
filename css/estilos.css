@@ -2,14 +2,130 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    text-decoration: none; /*Para quitar la línea de los enlaces*/
+    list-style: none; 
 }
 
 @font-face {
     font-family: 'Arimo';
-    src: url(Tipografías/static/Arimo-BoldItalic.ttf);
+    src: url(../Tipografias/Arimo/Arimo-SemiBold.ttf);
 }
 
-@font-face {
+@font-face{
     font-family: 'Inter';
-    src: url(Tipografías/static/Inter_18pt-Light.ttf);
+    src: url(../Tipografias/Inter/Inter_18pt-Light.ttf);
 }
+
+body {
+font-family: 'Arimo', 'Inter';
+}
+
+
+                                     /*ENCABEZADO*/
+/* LOG0*/
+header .logo {
+    display: flex;
+    justify-content: center; /* Para que este ubicado al medio*/
+    padding: 11px ;
+
+}
+ /*MENÚ */
+
+.menú {
+    /*background-color: #7DDA58;*/
+    border: solid #7DDA58;
+    background-color: #7DDA58;
+    width: 100%; 
+    line-height: 100px;  /*Tamaño del menú*/
+}
+
+.menú ul{
+    display: flex; /* Para poder alinear los elementos que forman parte del menù*/
+    justify-content: center; /*Va a  centrar los elementos en el medio, uno al lado del otro*/
+    height: 100%; /*Para que ocupe toda la altura del menú*/
+    margin: 0;
+    padding: 0;
+}
+
+.menú ul li{
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/*Para darle estilos a los enlaces*/
+.menú ul li a {
+    padding-left: 30px;  /*Espaciado entre los elementos*/
+    padding-right: 30px;
+    height: 100%;
+    display:flex; /*Convierte el enlace en un contenedor flexible*/
+    align-items: center; /*centra el texto verticalmente*/
+    justify-content: center; /*Centra el texto horizontalmente*/
+    color: #245324; 
+    font-family: 'Arimo', serif;
+    font-size: 22px;
+    border-bottom: 2px solid transparent;
+}  
+
+.menú ul li a:hover {
+    background-color: #ffff;
+    color: purple;
+    border-bottom: 2px solid #245324
+}
+
+/*Carrusel de img*/
+
+.carrusel {
+    width: 100%; /*Para que ocupe todo el ancho de la pantalla*/
+    height: auto; /*Para que la altura se adapte a nuestro contenido */
+    margin: 0 auto 0;
+    overflow: hidden;
+}
+
+.carrusel ul{
+    display: flex;
+    padding: 0;
+    width: 300%;  /*Ancho total de las 3 imágenes*/
+    animation: slide 15s infinite alternate ease-in-out;
+}
+
+.carrusel li{
+    width: 100%;
+    position: relative;
+}
+
+.carrusel img{
+    width: 100%;
+}
+
+@keyframes slide {
+    0% { margin-left: 0;}
+    20% { margin-left: 0;}
+
+    25% { margin-left: -100%;}
+    45% { margin-left: -100%;}
+
+    50% { margin-left: -200%;}
+    70% { margin-left: -200%;}
+
+    75% { margin-left: -100%;}
+    100% { margin-left: -0%;}
+}
+
+   /*Sección Mujeres*/
+#Mujeres h2{        /*En este caso se usa "#" (ID SELECTOR), porque el elemento al que queremos aplicarle un estilo es un section, que tiene un atributo*/
+    border: solid #7DDA58;
+    background-color: #7DDA58;
+    color: black;
+    text-align: center;  /*Para ubicar el texto en e medio*/
+    padding: 18px 20px;  /*Tamaño del rectangulo (el 1er valor aumenta la altura y el 2do valor el ancho*/ 
+    margin-top: 5px; 
+    margin-bottom: 5px;
+    font-family: 'Inter';
+    font-size: 25px;
+    
+
+
+}
+
+

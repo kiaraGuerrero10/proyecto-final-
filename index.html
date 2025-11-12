@@ -9,35 +9,229 @@
     <meta name="description" content=" Este sitio web, te ofrece una variedad de zapatillas casuales, que te aseguraran comodidad y estilo">
     <meta name="author" content="KICK ZONE">
 
-    <!--Descarga e importación de Font Awesome-->
-    <link href="fontawesome-free-6.7.2-web/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="estilos.css">
     <title>KICK ZONE</title>
+
+    <!--Descarga e importación de Font Awesome-->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="stylesheet" href="css/fontawesome-free-6.7.2-web/css/all.css">
 </head>
-<body>
+<body id="Inicio"> <!--Al apretar el botón de inicio me lleve a la parte principal de la página-->
+
     <header>
         <div class="logo"> <!--Le agrego un class porque tambien le voy a dar estilos a mi logo-->
             <a href="index.html">
-            <img src="../Proyecto Final/LOGO/logo.png" alt="logo de KICK ZONE" width="70" height="50">
+            <img src="../Proyecto Final/LOGO/logo.png" alt="logo de KICK ZONE" width="80" height="60">
             </a>
         </div>
 
         <!--MENÚ-->
 
-        <nav class="menu">
+        <nav class="menú">
             <ul>
-                <li><a href="#Inicio">Inicio</a></li>
-                <li><a href="Mujeres">Mujeres</a></li>
+                <li><a href="#top">Inicio</a></li> <!--Para que al apretar el boton de inicio, me lleve a la parte superior-->
+                <li><a href="#Mujeres">Mujeres</a></li>
                 <li><a href="#Hombres">Hombres</a></li> 
                 <li><a href="#Unisex">Unisex</a></li>
-                <li><a href="#Unisex">Acerca de</a></li>  
+                <li><a href="#Acerca de">Acerca de</a></li>  
                 <li><a href="#Contacto">Contacto</a></li>    
-              
             </ul>
+
+            <!--<ul>
+                <li class="submenu">
+                    <img src="../Proyecto Final/LOGO/shopping-cart-free-5-svgrepo-com.png" alt="">
+                    <div class="carrito">
+                        <table id="lista-carrito">
+
+                        </table>
+                    </div>
+
+                </li>
+            </ul>-->
         </nav>
+    </header> 
+   
+    <!--Carrusel de fotos-->
+     
+    <div class="carrusel">
+        <ul>
+            <li>
+                <img src="img banner/new balance.jpg" alt="">
+            </li>
+
+            <li>
+                <img src="img banner/puma.jpg" alt="">
+
+            </li>
             
+            <li>
+                <img src="img banner/adidas_2.jpg" alt="">
+
+            </li>
+        </ul>
+    </div>
+    
+      <!--SECCION DE ZAPATILLAS DE MUJERES-->
+
+    <section id="Mujeres"> <!--Me permite llegar directamente a ese apartado-->
+        <h2>Mujeres</h2>
+    
+        <div class="productos">
+    
+            <div class="zapatilla 1">
+                <img src="../Proyecto Final/ZAPATILLAS/MUJERES/zapatilla1.jpg" title="New Balance 530 Mujer">
+                <div class="info-producto">
+                    <h3>New Balance 530</h3>
+                    <p class="precio">$168.000</p>
+                    <a href="#" class="btn-comprar">Ver Producto</a>
+                </div>
+            </div>
+    
+            <div class="zapatilla 2">
+                <img src="../Proyecto Final/ZAPATILLAS/MUJERES/zapatilla2.jpg" title="Puma Club II Era Mujer">
+                <div class="info-producto">
+                    <h3>Puma Club II Era</h3>
+                    <p class="precio">$250.000</p>
+                    <a href="#" class="btn-comprar">Ver Producto</a>
+                </div>
+            </div>
+    
+            <div class="zapatilla 3">
+                <img src="../Proyecto Final/ZAPATILLAS/MUJERES/zapatilla3.jpg" alt="Nike Zoom Vomero 5 SE Mujer">
+                <div class="info-producto">
+                    <h3>Nike Zoom Vomero 5 SE</h3>
+                    <p class="precio">$350.999 </p>
+                    <a href="#" class="btn-comprar">Ver Producto</a>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
+    
+       <!--SECCION DE ZAPATILLAS DE HOMBRES-->
+    <section id="Hombres"> <!--Me permite llegar directamente a ese apartado-->
+        <h2>Hombres</h2>
+        <div class="productos">
+    
+            <div class="zapatilla 4">
+                <img src="../Proyecto Final/ZAPATILLAS/HOMBRES/zapatilla1.jpg" title="Nike Waffle One Hombre">
+                <div class="info-producto">
+                    <h3>Nike Waffle One0</h3>
+                    <p class="precio">$168.000</p>
+                    <a href="#" class="btn-comprar">Ver Producto</a>
+                </div>
+            </div>
+
+            <div class="zapatilla 5">
+                <img src="../Proyecto Final/ZAPATILLAS/HOMBRES/zapatilla2_2.jpg" title="Puma-180 Hombre">
+                <div class="info-producto">
+                    <h3>Puma-180</h3>
+                    <p class="precio">$190.000</p>
+                    <a href="#" class="btn-comprar">Ver Producto</a>
+                </div>
+            </div>
+
+            <div class="zapatilla 6">
+                <img src="../Proyecto Final/ZAPATILLAS/HOMBRES/zapatilla3.jpg" title="Adidas Forum Low Hombre">
+                <div class="info-producto">
+                    <h3>Adidas Forum Low,</h3>
+                    <p class="precio">$168.000</p>
+                    <a href="#" class="btn-comprar">Ver Producto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!--SECCION DE ZAPATILLAS UNISEX -->
+
+    <section id="Unisex"> <!--Me permite llegar directamente a ese apartado-->
+        <h2>Unisex</h2>
+        <div class="productos">
+
+            <div class="zapatilla 7">
+                <img src="../Proyecto Final/ZAPATILLAS/UNISEX/zapatilla1.jpg" title="New Balance 9060 Unisex">
+                <div class="info-producto">
+                    <h3>New Balance 9060</h3>
+                    <p class="precio">$168.000</p>
+                    <a href="#" class="btn-comprar">Ver Producto</a>
+                </div>
+            </div>
+
+            <div class="zapatilla 8">
+                <img src="../Proyecto Final/ZAPATILLAS/UNISEX/zapatilla2.jpg" title="Adidas Samba OG Unisex">
+                <div class="info-producto">
+                    <h3>Adidas Samba OG</h3>
+                    <p class="precio">$168.000</p>
+                    <a href="#" class="btn-comprar">Ver Producto</a>
+                </div>
+            </div>
+
+            <div class="zapatilla 9">
+                <img src="../Proyecto Final/ZAPATILLAS/UNISEX/zapatilla3.jpg" title="Puma Park Lifestyle SK8 Unisex">
+                <div class="info-producto">
+                    <h3>Puma Park Lifestyle SK8</h3>
+                    <p class="precio">$168.000</p>
+                    <a href="#" class="btn-comprar">Ver Producto</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <main>
+        <section class="container">
+            <h2>Contenido principal</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, alias!</p>
+        </section>
+
+        <aside>
+            <h3>Información lateral</h3>
+            <p>Aquí podés colocar widgets, enlaces, anuncios, etc.</p>
+        </aside>
+    </main>
+
+    <section id="Acerca de">
+
+        <div class="logo2"> <!--Le agrego un class porque tambien le voy a dar estilos a mi logo, en este caso, modificar su ubicación-->
+            <a href="index.html"> <!--Para que al darle click me lleve directamente a la parte principal de la página-->
+            <img src="../Proyecto Final/LOGO/logo2.png" alt="logo de KICK ZONE" width="" height="">
+            </a>
+        </div>
+
+        <article> 
+            <h2>Acerca de</h2> 
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti repudiandae cupiditate velit obcaecati nihil et ex sapiente earum beatae!
+                 Maxime exercitationem dolore praesentium quaerat doloremque voluptate similique eum, reprehenderit quod!</p> 
+            <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, minima. </p>
+        </article>
+    </section>
 </body>
+
+<footer>
+    <section id="Contacto">
+        <div class="contenedor">
+            <div class="footer-row">
+                <div class="links">
+                    <h4>Redes Sociales</h4>
+                    <div class="links-redes">   <!--Para que al clickear encima del icono, me leve a la red social que indica-->
+                      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>  <!--El taret blank, se indica para que el enlace
+                          de la red social, se abra en otra pestaña-->
+                      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                      <a href="https://x.com/?lang=es" target="_blank"><i class="fab fa-x"></i></a>
+                    </div>
+                </div>
+
+                <ul>
+                  <li>
+                    <p>Contacto</p>
+                    <p>+54 1172736733</p>
+                    <p>Email</p>
+                  <a href="#">kickzone@gmail.com/a></li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+</footer>
 </html>
