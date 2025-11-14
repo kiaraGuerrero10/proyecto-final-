@@ -31,46 +31,90 @@ header .logo {
 }
  /*MENÚ */
 
-.menú {
+.menu {
     /*background-color: #7DDA58;*/
-    border: solid #7DDA58;
-    background-color: #7DDA58;
+    border: solid #0049AD;
+    background-color: #0049AD;
     width: 100%; 
-    line-height: 100px;  /*Tamaño del menú*/
+    /*line-height: 100px;  /*Tamaño del menú*/    /*Non puedo aplicar padding, porque se me deforma el texto y el hover */
 }
 
-.menú ul{
+.menu label{
+    display: none;
+    font-size: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #ffffff;
+    border: solid 2px #ffffff;
+    border-radius: 10px;
+    width: 70px;
+}
+
+
+
+.menu ul{
     display: flex; /* Para poder alinear los elementos que forman parte del menù*/
     justify-content: center; /*Va a  centrar los elementos en el medio, uno al lado del otro*/
-    height: 100%; /*Para que ocupe toda la altura del menú*/
+    /*height: 100%; /*Para que ocupe toda la altura del menú*/
     margin: 0;
     padding: 0;
 }
 
-.menú ul li{
-  height: 100%;
+.menu ul li{
+  /*height: 100%;*/
   padding: 0;
   margin: 0;
 }
 
 /*Para darle estilos a los enlaces*/
-.menú ul li a {
+.menu ul li a {
+    padding: 30px;
+    /*
     padding-left: 30px;  /*Espaciado entre los elementos*/
-    padding-right: 30px;
-    height: 100%;
+    /*padding-right: 30px;
+    /*height: 100%;*/
     display:flex; /*Convierte el enlace en un contenedor flexible*/
     align-items: center; /*centra el texto verticalmente*/
     justify-content: center; /*Centra el texto horizontalmente*/
-    color: #245324; 
+    color: #fff; 
     font-family: 'Arimo', serif;
     font-size: 22px;
     border-bottom: 2px solid transparent;
 }  
 
-.menú ul li a:hover {
-    background-color: #ffff;
-    color: purple;
-    border-bottom: 2px solid #245324
+.menu ul li a:hover {
+    background-color: #fff;
+    color: #02043F;
+    border-bottom: 2px solid #fff;
+}
+
+@media screen and (max-width: 900px) {
+
+    .menu ul li a {
+        font-size: 18px;
+    }
+    
+}
+
+
+@media screen and (max-width: 800px) {
+    .menu ul {
+        display: none; /*Oculta el menú en pantallas pequeñas*/
+    }
+    .menu label {
+        display: block; /*Muestra el ícono del menú en pantallas pequeñas*/
+    }
+    .menu input[type="checkbox"]:checked ~ ul { /* cuando input[checkbox] este tildado, aplica estilo al <ul> */
+        display: flex; /*Muestra el menú cuando se selecciona el ícono*/
+        flex-direction: column; /*Para que los elementos del menú se apilen verticalmente*/
+        background-color: #0049AD;
+       /* padding: 10px auto;*/
+    }
+    .menu ul li a {
+        /*padding: 15px; /*Aumenta el padding para facilitar la selección en pantallas táctiles*/
+        border-bottom: 1px solid #ffffff; /*Agrega una línea entre los elementos del menú*/
+        padding: 5px;
+    }
 }
 
 /*Carrusel de img*/
@@ -112,20 +156,334 @@ header .logo {
     100% { margin-left: -0%;}
 }
 
-   /*Sección Mujeres*/
-#Mujeres h2{        /*En este caso se usa "#" (ID SELECTOR), porque el elemento al que queremos aplicarle un estilo es un section, que tiene un atributo*/
-    border: solid #7DDA58;
-    background-color: #7DDA58;
-    color: black;
-    text-align: center;  /*Para ubicar el texto en e medio*/
-    padding: 18px 20px;  /*Tamaño del rectangulo (el 1er valor aumenta la altura y el 2do valor el ancho*/ 
-    margin-top: 5px; 
-    margin-bottom: 5px;
-    font-family: 'Inter';
-    font-size: 25px;
+   /*Sección Mujeres: Estilos generales para el texto de la sección y la galería de productos */  
+
+#Mujeres {  /*En este caso se usa "#" (ID SELECTOR), porque el elemento al que queremos aplicarle un estilo es un section, que tiene un atributo*/
+    display: flex;
+    flex-direction: column;  /* Para que ubique a la galeria debajo del texto de la sección ( sección - galería)*/
+    align-items: center; /*Para centrarlos horizontalmente*/
+    width: 100%; /*Para que ocupe todo el ancho de mi pagina web*/
+    }
+
+#Mujeres h2 {   /*Propiedades para el encabezado*/
+
+    border: solid #CBDFEF;
+    background-color: #CBDFEF;
+    color: #0049AD;/*Color de la tipografía*/
+    text-align: center;  /*Para ubicar el texto en el medio*/
+    width: 100%;  /*Para que el rectangulo de nuestra sección ocupe todo el ancho */
+    padding: 20px 20px;  /* Definir el tamaño de nuestro rectángulo*/
+    margin-bottom: 12px;  /* Para establecer la separación entre el título de la sección y los productos*/
+    font-family: 'Inter'; /*CAMBIAR TIPORGRAFIAAAAAAAAAAAAAAAAAAA */
+    font-size: 35px;  /*Tamaño de la tipografía*/
+}
+
+/*Establecerles un limite a las imágenes, ya que al ser muy grandes, no se pueden ubicar una al lado de la otra*/
+.galeria-mujeres img {
+    max-width: 90%;  /*Para establecerle el máximo ancho de nuestra imagen*/
+    height: auto; /*Para que la altura se ajuste proporcionalmente al ancho*/
+    display: block; /*Convierte las imagenes en bloques para poder establecerles estilos*/
+    margin: 0 auto 10px auto; /* El "0" me va a permitir eliminar el espacio superior, el "auto" me permite centrar la img, "10px" me va a permitir separar la img del texto*/
+    border-radius: 5px;
+    }
+
+    /*Primero establecemos los parámetros generales de nuestra galeria de imágenes*/
+.productos-mujeres {
     
+    display: flex;
+    justify-content: space-between;  /*Divide el espacio sobrante entre cada uno de estos elementos, dandole a cada uno el mismo espacio sobrante, y a la vez
+                                    le da un espacio igualitario al inicio y final para ubicar los elementos*/
+    flex-wrap: wrap; /*Para que los elementos hijos se adapten al espacio de su contenedor padre, y al agregarse más elementos hijo, se van a ubicar debajo, adaptandose al espacio de su contenedor padre */
+    width: 100%;    /*El ancho total que va a ocupar la galería de productos*/
+    padding: 10px 0;  /*Espacio que se va a dejar de arriba y abajo*/
+    margin: 0 auto;  /*Para centrarlo horizontalmente*/
+}
 
+.btn-ver-mas {
+    text-align: center;
+    text-decoration: none;
+    background-color: #0049AD;
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    margin-top: -15px;
+}
 
+.container h2:not(.texto h2) { /*  subclase :NOT()  permite aplicar estilos eseptuando lo que indica not( sector que no aplica )  */
+    border: solid #CBDFEF;
+    background-color: #CBDFEF;
+    color: #0049AD;
+    text-align: center;
+    width: 100%;
+    padding: 20px 20px;
+    margin-bottom: 12px;
+    font-family: 'Inter';
+    font-size: 35px;
 }
 
 
+ .galeria-mujeres{
+    background-color: #CBDFEF;
+    padding: 15px 10px;  /*Para que la imaen no exceda los limtes de la caja*/
+    border-radius: 5px;
+    width: 32%;  /*Tamaño de cada una de las cajas*/
+    margin-bottom: 20px;  /*Para dejar un espacio entre la 1era fila de cajas y la 2da fila*/
+    text-align: center;
+}
+
+/*SECCION HOMBRES*/
+
+/*Estilos generales*/
+
+#Hombres {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   /*Para que se centre horizontalmente*/
+    width: 100%;
+}
+
+#Hombres h2 {    /*Para darle estios a mi texto de la sección*/
+    border: solid #CBDFEF;
+    background-color: #CBDFEF;
+    color: #0049AD;/*Color de nuestra tipografía*/
+    text-align: center;  /*Para ubicar el texto en el medio*/
+    width: 100%;  /*Para que el rectangulo de nuestra sección ocupe todo el ancho */
+    padding: 20px 20px;  /* Definir el tamaño de nuestro rectángulo*/
+    margin-bottom: 12px; /*Para establecer la separación entre el título de la sección y los productos*/
+    font-family: 'Inter';
+    font-size: 35px;  /*Tamaño de la tipografía*/
+}
+/*Darle estilo a la imagen en cuanto al tamaño y el espacio que va a ocupar y cuanto espacio va a haber entre ellas */
+.galeria-hombres img {
+    max-width: 90%;  /*Para establecerle el máximo de nuestra imagen*/
+    height: auto; /*Para que la altura se ajuste proporcionalmente al ancho*/
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 5px;
+    
+    }
+
+.productos-hombres {
+    
+    display: flex;
+    justify-content: space-between;  /*Divide el espacio sobrante entre cada uno de estos elementos, dandole a cada uno el mismo espacio sobrante, y a la vez
+                                    le da un espacio igualitario al inicio y final para ubicar los elementos*/
+    flex-wrap: wrap; /*Para que los elementos hijos se adapten al espacio de su contenedor padre, y al agregarse más elementos hijo, se van a ubicar debajo, adaptandose al espacio de su contenedor padre */
+    width: 100%;    /*El ancho total que va a ocupar la galería de productos*/
+    padding: 10px 0;  /*Espacio que se va a dejar de arriba y abajo*/
+    margin: 0 auto;  /*Para centrarlo horizontalmente*/
+}
+
+/*Estilos para las cajas que van a contener las imagenes y cada especificación del producto*/
+.galeria-hombres{
+    background-color: #CBDFEF;
+    padding: 15px 10px;
+    border-radius: 5px;
+    width: 32%;
+    margin-bottom: 20px;  /*Para dejar un espacio entre la 1era fila de cajas y la 2da fila*/
+    text-align: center;
+}
+
+/*SECCION Unisex*/
+
+/*Estilos generales*/
+
+#Unisex {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   /*Para que se centre horizontalmente*/
+    width: 100%;  /*El anco total que va a ocupar en la página*/
+}
+
+#Unisex h2 {    /*Para darle estios a mi texto de la sección*/
+    border: solid #CBDFEF;
+    background-color: #CBDFEF;
+    color: #0049AD;/*Color de nuestra tipografía*/
+    text-align: center;  /*Para ubicar el texto en el medio*/
+    width: 100%;  /*Para que el rectangulo de nuestra sección ocupe todo el ancho */
+    padding: 20px 20px;  /* Definir el tamaño de nuestro rectángulo*/
+    margin-bottom: 12px;
+    font-family: 'Inter';
+    font-size: 35px;  /*Tamaño de la tipografía*/
+}
+
+/*Darle estilo a la imagen en cuanto al tamaño y el espacio que va a ocupar y cuanto espacio va a haber entre ellas */
+.galeria-unisex img {
+    max-width: 90%;  /*Para establecerle el máximo de nuestra imagen*/
+    height: auto; /*Para que la altura se ajuste proporcionalmente al ancho*/
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 5px;
+}
+
+.productos-unisex {
+    
+    display: flex;
+    justify-content: space-between;  /*Divide el espacio sobrante entre cada uno de estos elementos, dandole a cada uno el mismo espacio sobrante, y a la vez
+                                    le da un espacio igualitario al inicio y final para ubicar los elementos*/
+    flex-wrap: wrap; /*Para que los elementos hijos se adapten al espacio de su contenedor padre, y al agregarse más elementos hijo, se van a ubicar debajo, adaptandose al espacio de su contenedor padre */
+    width: 100%;    /*El ancho total que va a ocupar la galería de productos*/
+    padding: 10px 0;  /*Espacio que se va a dejar de arriba y abajo*/
+    margin: 0 auto;  /*Para centrarlo horizontalmente*/
+}
+
+/*Estilos para las cajas que van a contener las imagenes y cada especificación del producto*/
+.galeria-unisex{
+    background-color: #CBDFEF;
+    padding: 15px 10px;
+    border-radius: 5px;
+    width: 32%;
+    margin-bottom: 20px;  /*Para dejar un espacio entre la 1era fila de cajas y la 2da fila*/
+    text-align: center;
+}
+
+/*Estilos generales para main:(Secciones - Barra Lateral - Acerca de) */
+main {
+    display: flex;
+    justify-content: space-between; /*Va  a separar mis secciones y mi barra lateral*/
+    align-items: flex-start; /*Para que alinee mi barra lateral en la parte superior, justo al comienzo de la 1era sección*/
+    gap: 20px; /*Espacio entre las secciones y la barra lateral*/
+    padding: 20px;
+}
+
+aside{
+    color: #fff;
+    flex: 0 0 200px; /*Esto va a permitir que la barra lateral mantenga el ancho fijo*/
+    padding: 20px;   /*Espacio entre mis secciones y mi barra lateral*/
+    border: 2px solid #fff;
+    background-color: #0049AD;
+    border-radius: 10px;
+    display: flex; 
+    flex-wrap: wrap; /*Permite que cada elemento se adapte al ancho del contenedor padre ( en este caso, se ubicaron en una columna)*/
+}
+
+aside h3{
+    font-size: 16px;
+    font-weight: normal;
+}
+
+aside div{
+    width: 100%;
+}
+
+
+
+
+/* Agregado de estilos para la Sección principal: Secciones: Mujeres, Hombres y Unisex , Acerca de */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    flex: 3; /*Permite que las secciones de los productos tomen todo el espacio sobrante, una vez que la barra lateral tome sus 200px*/
+    padding: 20px;
+    border-radius: 10px; /*Sirve para poder redondear las esquinas y darle un mejor aspecto visual*/
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /*Para añadirle una sombra a mi contenedor principal*/
+}
+
+/*1ERO: Ajustar primero el tamaño de las imagenes que componen en ASIDE*/
+
+.marcas img {
+    max-width: 100%; /*Para limitar el ancho de mi imagen y que no exceda el de mi aside*/
+    max-height: 98px;  /* Para controlar la altura maxima de las imagenes de mis logos*/
+    height: auto;
+    display: block; /*Para centras las imagenes de los logos */
+    margin: 0 auto;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+
+/*Estilo de las letras de los logos*/
+.marcas h3{
+    text-align: center; /*Para alinear el texto al centro*/
+    margin-bottom: 25px; /*Para establecer un espacio entre cada marca*/
+    margin-top: 20px;
+    color: #fff;
+    
+}
+
+/*Estilos para Acerca de*/
+
+.acerca-de {
+    display: flex;
+    justify-content: center; /*Para centrar mi contenido horizontalmente*/
+    padding: 45px 30px;
+    align-items: center; /*Para alinar el contenido al centro */
+    flex-direction: row; /*Para ubicar los elementos, uno al lado del otro*/
+    justify-content: space-between;
+    border: 2px solid #0049AD;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 900px) {
+    .acerca-de {
+        flex-direction: column; /*Para que en pantallas pequeñas, los elementos se ubiquen uno debajo del otro*/
+    }
+    
+    .acerca-de p, .acerca-de h2{
+        margin-right: 58px;
+    }
+}
+
+.texto {
+    text-align: center;
+    margin-left: 50px;  /*Para ubicar el texto más a la derecha, para que no este muy pegado al logo*/
+}
+
+.texto h2 {
+
+    padding-bottom: 30px;
+    font-size: 35px;
+    color: #0049AD;
+}
+
+.texto p {
+    padding-bottom: 80px;
+}
+/*Estilos generales al footer*/
+.foo-ter {
+    display: flex;
+    border: 2px solid #0049AD;
+    background-color: #0049AD;
+    padding: 30px 20px;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contactos p{
+    color: #fff;
+    margin-bottom: 15px;  /*Para establecer una separacion entre email y contacto*/
+}
+
+.contactos a {
+    color: #fff;
+}
+
+
+.links h4{
+    padding-bottom: 10px;
+    color: #fff;
+}
+
+.links-redes i{
+    font-size: 24px;
+    margin-right: 15px;
+    color: #fff;
+}
+
+
+/* Responsive general */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Pasa el aside debajo del contenido */
+    }
+
+    .container, aside {
+        width: 100%;
+    }
+}
